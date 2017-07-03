@@ -1,0 +1,100 @@
+.wrapper {
+	background: #FFB75E;
+	background: -webkit-linear-gradient(to right, $color-prim, $color-sec);
+	background: -moz-linear-gradient(to right, $color-prim, $color-sec);
+	background: linear-gradient(to right, $color-prim, $color-sec);
+	height: 100vh;
+}
+
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 80px 0;
+	height: 400px;
+	text-align: center;
+}
+
+.container-flex {
+  padding: 80px 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 100%;
+	.column {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		@include each-sticky-color(2, #FAAACA);
+		@include each-sticky-color(3, #1FCECB);
+		@include each-sticky-color(4, #FFDA66);
+		@include each-sticky-color(5, #789AA1);
+		@include each-sticky-color(6, #F2CA80);
+		@include each-sticky-color(7, #B8BF73);
+		@include each-sticky-color(8, #D19552);
+		@include each-sticky-color(9, #F2EBC7);
+		@include each-sticky-color(10, #A2C1C6);
+	}
+  @media screen and (min-width: 600px) and (max-width: 799px) {
+    @include flexgrid(2, 0.8rem);
+  }
+  @media screen and (min-width: 800px) and (max-width: 1199px) {
+    @include flexgrid(3, 0.8rem);
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1699px) {
+    @include flexgrid(4, 0.8rem);
+  }
+	@media screen and (min-width: 1700px) and (max-width: 2199px) {
+		@include flexgrid(6, 0.8rem);
+	}
+	@media screen and (min-width: 2200px) {
+		@include flexgrid(8, 0.8rem);
+	}
+}
+
+.form-group {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	margin-top: -200px;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 999;
+  height: 70px;
+  background-color: $color-prim;
+  color: $color-text-light;
+  margin: 0;
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+	& h2 {
+		display: flex;
+		align-items: center;
+		margin-left: 40px;
+  }
+	@media screen and (max-width: 600px) {
+		& h2 {
+			display: none;
+		}
+	}
+  & .user {
+    display: flex;
+    align-items: center;
+    right: 40px;
+    position: fixed;
+    max-width: calc(100% - 60px);
+    & > * {
+      margin-left: 10px;
+    }
+		& i {
+		  display: inline-block;
+		  position: absolute;
+		  top: 6px;
+		  left: -30px;
+		}
+  }
+}

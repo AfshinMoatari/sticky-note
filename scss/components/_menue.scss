@@ -1,0 +1,27 @@
+ul {
+  display: none;
+  position: fixed;
+  list-style: none;
+  right: 0;
+  top: 70px;
+  background-color: $color-prim;
+  & li {
+    &:not(first-of-type) {
+      & a {
+        margin-top: 10px;
+      }
+    }
+    &:not(last-of-type) {
+      & a {
+        margin-bottom: 10px;
+      }
+    }
+    & a {
+      display: block;
+      padding-left: 55px;
+      padding-right: 70px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+}

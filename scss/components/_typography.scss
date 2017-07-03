@@ -1,0 +1,17 @@
+@import url($path-font-1);
+@import url($path-font-2);
+
+h1 {
+	@include text(2.5em, 200, $color: $color-text-light);
+	transition-duration: .25s;
+	transition-timing-function: ease-in-put;
+}
+
+h2 {
+	@include text(1.5em, 300, $color: $color-text-light);
+}
+
+h3 {
+	@include text(0.75em, 300, $color: $color-text-hightlight);
+	margin: 5px 0 3px;
+}

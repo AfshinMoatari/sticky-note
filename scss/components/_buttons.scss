@@ -1,0 +1,46 @@
+button {
+  @include text(1.2em, $color: $color-prim);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  background-color: $color-button-main;
+  border: 0;
+  padding: 10px 15px;
+  border-radius: $br;
+  width: 250px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  &:hover {
+    background-color: $color-button-hover;
+  }
+  &.add {
+    @include text(1.2em, bolder, $color: $color-text-light);
+    position: absolute;
+    top: -20px;
+    right: -30px;
+    width: 35px;
+    height: 35px;
+    border-radius: $br-round;
+    background-color: $color-button-add;
+    text-align: center;
+    padding: 0;
+    font-weight: bolder;
+    font-size: 18px;
+    display: none;
+  }
+  &.remove {
+    @include text(1.2em, bolder, $color: $color-text-light);
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 35px;
+    height: 35px;
+    border-radius: $br-round;
+    background-color: $color-button-remove;
+    text-align: center;
+    padding: 0;
+    display: none;
+  }
+}

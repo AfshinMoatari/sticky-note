@@ -1,0 +1,47 @@
+.sticky {
+  font-family: $stack-handlee;
+  padding: 5px 20px 10px 20px;
+  width: 250px;
+  margin: 30px auto;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  border-top-left-radius: $br;
+  border-top-right-radius: $br;
+  border-bottom-right-radius: $br;
+  border-bottom-left-radius: $br;
+  position: relative;
+  background: #FAAACA;
+  &.main {
+    background: #FFB75E;
+  }
+  & span {
+    float: right;
+  }
+  & h2 {
+    color: $color-text-hightlight;
+  }
+  &:before,
+  &:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    width: 70%;
+    max-width: 300px;
+    max-height: 100px;
+    height: 55%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transform: skew(-15deg) rotate(-5deg);
+  }
+  &:after {
+    left: auto;
+    right: 20px;
+    transform: skew(15deg) rotate(5deg);
+  }
+
+  &:hover {
+    .remove, .add{
+      display: inherit;
+    }
+  }
+}

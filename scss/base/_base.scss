@@ -1,0 +1,33 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	*:before, *:after {
+		box-sizing: border-box;
+	}
+}
+
+body {
+	@include text(1em, $weight:200, $color: $color-text-light);
+	font-family: $stack-source-sans;
+}
+
+a {
+	color: $color-text-light;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+img {
+	border-radius: $br-round;
+	position: relative;
+}
+
+.error{
+	color: $color-text-hightlight;
+	position: absolute;
+	display: flex;
+	align-self: flex-end;
+}

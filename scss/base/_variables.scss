@@ -1,0 +1,34 @@
+//color variables
+$White : #fff;
+$Gallery: #F0F0F0;
+$Tangerine: #ED8F03;
+$Koromiko: #FFB75E;
+$Thunderbird: #C04017;
+$GuardsmanRed: #E90711;
+$Melon: #F97D75;
+$Cucumber: #4fc08d;
+
+//functional color variables
+$color-prim: $Tangerine;
+$color-sec: $Koromiko;
+$color-third: $Thunderbird;
+$color-text-light: $White;
+$color-text-hightlight: $Thunderbird;
+$color-button-hover: $Gallery;
+$color-button-main: $White;
+$color-button-remove: $Melon;
+$color-button-add: $Cucumber;
+$color-alert: $GuardsmanRed;
+
+//font stacks
+$stack-sans-serif: Arial, sans-serif;
+$stack-source-sans :'Source Sans Pro', $stack-sans-serif;
+$stack-handlee :'Handlee', $stack-source-sans;
+
+//border radius
+$br: 3px;
+$br-round: 999px;
+
+//asset paths
+$path-font-1: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300';
+$path-font-2: 'https://fonts.googleapis.com/css?family=Handlee';

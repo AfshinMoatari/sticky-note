@@ -1,0 +1,39 @@
+@mixin text($size: false, $weight: false,  $height: false, $color: false) {
+  @if $size { font-size: $size; }
+  @if $weight { font-weight: $weight; }
+  @if $height { line-height: $height; }
+  @if $color { color: $color; }
+}
+
+@mixin each-sticky-color($num, $color) {
+  &:nth-child(#{$num}n) .sticky{
+    background: $color;
+  }  
+}
+
+@mixin flexgrid($columns, $margin) {
+  $width: (100% / $columns);
+  $calc-margin: (($margin * $columns) - $margin) / $columns;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &:after {
+    flex: auto;
+    margin: 0 auto;
+    content: "";
+  }
+  > * {
+    width: calc( #{$width} - #{$calc-margin} );
+    margin-left: $margin / 2;
+    margin-right: $margin/ 2;
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+    &:nth-child(#{$columns}n) {
+      margin-right: 0;
+    }
+    &:nth-child(#{$columns}n + 1) {
+      margin-left: 0;
+    }
+  }
+}
