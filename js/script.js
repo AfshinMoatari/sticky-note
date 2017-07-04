@@ -1,7 +1,8 @@
 'use strict';
 
 $(function(){
-  $('#add-note').on('click', function() {
+  $('#add-note').on('click', function(event) {
+    event.preventDefault();
     let subject  = $('#subject').val();
     let message = $('#message').val();
     if(!subject && !message) {
