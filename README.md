@@ -5,7 +5,7 @@ Web Application made for saving your important notes :)
 ## Installing
 
 1. Download the project!
-2. Run you prefer development environment, [XAMPP](https://www.apachefriends.org/index.html) for instance. I used [DesktopServer](https://serverpress.com/) which runs on top of XAMPP
+2. Run you prefer development environment, [XAMPP](https://www.apachefriends.org/index.html) for instance.
 3. Open the phpMyAdmin and create a new database with the name of: `notes_app`
 4. Import the tables from `database/notes_app.sql` into your newly created database
 5. Install the Sass: `gem install sass`
