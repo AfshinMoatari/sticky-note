@@ -1,6 +1,7 @@
 'use strict';
 
 $(function(){
+  //send add record Ajax request
   $('#add-note').on('click', function(event) {
     event.preventDefault();
     let subject  = $('#subject').val();
@@ -32,22 +33,36 @@ $(function(){
             let monthname = nm[month];
             let daysuffixe = day + suffixes[day];
             $('.notecount').text(newCount);
-               $('<div class="column">'
+               $('<div class="column" data-key='+new_note['id']+'>'
               + '<div class="sticky">'
-                + '<button class="remove">-</button>'
-                + '<h2>'+ new_note['subject'] +'</h2>'
-                + '<h3>'+ monthname+' '+daysuffixe+', '+year+'<span>'+time+'</span>'+'</h3>'
-                + '<p>'+ new_note['message'] +'</p>'
+                + '<button class="remove remove-note">-</button>'
+                + '<h2>'+new_note['subject'] +'</h2>'
+                + '<h3>'+monthname+' '+daysuffixe+', '+year+'<span>'+time+'</span>'+'</h3>'
+                + '<p>'+new_note['message'] +'</p>'
               + '</div>'
-             + '</div>')
+             + '</div>').hide().fadeIn(600)
             .insertAfter($('.column:first-child'));
             $('form')[0].reset();
-            $('.error').html("Sticky note successfully saved.").delay(3000).fadeOut();
+            $('.error').html("Sticky note successfully saved.").delay(3000).fadeOut(300);
           }
       });
     }
   });
-
+  //send remove Ajax request
+  $('body').on('click', '.remove-note', function(event) {
+    event.preventDefault();
+    let note_id = $(this).parents('.column').data('key');
+    $.ajax ({
+      url: 'inc/erase_handler.php',
+      type: 'POST',
+      data: { note_id: note_id },
+      dataType: 'json',
+      success: function(note_id){
+        $(".column[data-key='" + note_id +"']").fadeOut(300);
+      }
+    })
+  });
+  //dropdown toggle
   $('#dropdown').on('click', function() {
     $('#dropdown ul').slideToggle('show');
   });

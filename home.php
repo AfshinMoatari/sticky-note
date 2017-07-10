@@ -54,9 +54,9 @@ $noteRow = $note -> show_all();
     if(count($noteRow) > 0) {
       foreach($noteRow as $note) {
         ?>
-        <div class='column'>
+        <div class='column' data-key='<?php print($note['id']); ?>'>
           <div class="sticky">
-            <button class="remove">-</button>
+            <button class="remove remove-note">-</button>
             <h2><?php print($note['subject']); ?></h2>
             <h3><?php print(date("F jS, Y", strtotime($note['published_date'])));?><span><?php print(date("g:ia", strtotime($note['published_date'])));?></span></h3>
             <p><?php print($note['message']); ?></p>
